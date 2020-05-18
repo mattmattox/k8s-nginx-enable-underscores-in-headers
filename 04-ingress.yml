@@ -1,0 +1,15 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: test-header
+  namespace: enable-underscores-in-headers
+spec:
+  rules:
+  - host: mmattox-test-header.support.rancher.space
+    http:
+      paths:
+      - backend:
+          serviceName: test-header
+          servicePort: 80
+        path: /
