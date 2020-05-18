@@ -19,9 +19,6 @@ RUN apt-get update && apt-get install -yq --no-install-recommends \
     git \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-##Set locales
-RUN locale-gen en_US.UTF-8 en_GB.UTF-8 de_DE.UTF-8 es_ES.UTF-8 fr_FR.UTF-8 it_IT.UTF-8 km_KH sv_SE.UTF-8 fi_FI.UTF-8
-
 ##Configure PHP
 ADD phpsettings.ini /etc/php/7.2/mods-available/
 RUN phpenmod phpsettings
